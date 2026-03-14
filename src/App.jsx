@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import Navbar from './components/Navbar'
 import CV from './modules/cv/CV'
 import Interests from './modules/interests/Interests'
@@ -28,6 +29,7 @@ export default function App() {
       >
         {ActiveModule && <ActiveModule />}
       </main>
+      <Analytics />
     </div>
   )
 }
