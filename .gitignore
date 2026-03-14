@@ -22,3 +22,20 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# Test coverage
+coverage/
+
+# Cache
+.cache/
+.parcel-cache/
+.eslintcache
