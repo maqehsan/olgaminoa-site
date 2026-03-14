@@ -1,61 +1,78 @@
 import styles from './CV.module.css'
 
 const data = {
-  name: 'Maqsood Ehsan',
-  location: 'Utrecht, Netherlands',
-  email: 'maqehsan@gmail.com',
-  linkedin: 'linkedin.com/in/maqsoodehsan',
+  name: 'Olga Milovanova',
+  location: 'Amsterdam, Netherlands',
+  linkedin: 'linkedin.com/in/olgamilovanova',
   tagline:
-    'Software developer with a perfectionistic eye for detail, hard-working and always striving to achieve the best results. Independent working style, loves challenges, and strongly values reliability and accountability. Feels at home in diverse and multicultural environments. Always open to new learning opportunities and especially interested in the practical application of skills.',
+    'Insurance supervision specialist with a background in financial econometrics. Focused on quantitative risk modelling, data-driven regulatory oversight, and the practical application of analytical skills in the financial sector.',
   skills: [
-    { group: 'Languages', items: ['Java', 'Python'] },
-    {
-      group: 'Technologies',
-      items: ['MySQL', 'Postgres', 'Git', 'Azure', 'Docker', 'Kafka', 'Cloud Foundry', 'CI/CD', 'HSM', 'Spring Boot', 'React', 'TypeScript'],
-    },
-    {
-      group: 'Other',
-      items: ['Scrum', 'Stakeholder Engagement', 'Security', 'Data Structures & Algorithms'],
-    },
+    { group: 'Languages', items: ['Python', 'Stata', 'R'] },
+    { group: 'Tools', items: ['Microsoft Excel', 'Power BI', 'KPI Dashboards', 'Data Analysis'] },
+    { group: 'Domain', items: ['Financial Econometrics', 'Insurance Supervision', 'Prudential Risk Modelling', 'Scrum'] },
   ],
   experience: [
     {
-      title: 'Software Engineer',
-      company: 'De Rabobank',
-      team: 'FEC Tech · External Fraud',
-      location: 'Utrecht, Netherlands',
-      dates: 'Oct 2022 – Present',
+      title: 'Insurance Supervision Specialist',
+      company: 'De Nederlandsche Bank',
+      team: 'Expertisecentrum Kapitaal en Actuariaat (TV_ECKA)',
+      dates: 'Sep 2025 – Present',
       bullets: [
-        'Built a reactive API gateway orchestrating fraud checks across upstream providers using Spring Cloud Gateway (WebFlux) with weighted/dynamic routing and rules-driven decisions.',
-        'Implemented cross-cutting filters: correlation ID propagation, strict XML validation, and asynchronous event publishing to Axual Kafka using Avro schemas and envelope encryption (Fortanix/Azure-based DEK).',
-        'Secured the edge with OAuth2/OIDC via Kong and TLS/mTLS; externalized configuration via Spring Cloud Config; added structured ECS logging and health/metrics endpoints.',
-        'Built a Spring Boot REST service for banking compliance to orchestrate incident feeds with scheduled generation/retrieval, archiving/cleanup, and XML validation against XSDs.',
-        'Persisted data to Azure SQL Server using Spring Data JPA/Hibernate and added observability via Splunk.',
-        'Implemented Kafka producers/consumers on Axual with Schema Registry (Avro) and mTLS; automated build/deploy with Maven, Azure DevOps, and Cloud Foundry.',
+        'Prudential supervision of the insurance sector within the capital and actuarial centre of expertise.',
       ],
     },
     {
-      title: 'Software Engineer — Young Engineering Professional Program',
-      company: 'De Rabobank',
-      team: 'FEC Tech · External Fraud',
-      dates: 'Oct 2022 – Apr 2024',
+      title: 'Master Thesis Intern',
+      company: 'De Nederlandsche Bank',
+      team: 'Expertisecentrum Kapitaal en Actuariaat (TV_ECKA)',
+      dates: 'Apr 2025 – Aug 2025',
       bullets: [
-        'Engineered end-to-end full-stack applications using Figma for design, React TypeScript for front end, and Java Spring Boot for back end.',
-        'Worked on various stakeholder projects including web data analytics and a carbon emissions credit marketplace.',
-        'Attended workshops on testing, security, and personal development.',
+        'Thesis: "Improving DNB Prudential Risk Models for Insurance Supervision"',
+        'Grade: 8.0',
+      ],
+    },
+    {
+      title: 'Working Student — Insurance Supervision',
+      company: 'De Nederlandsche Bank',
+      team: 'Expertisecentrum Data, Algoritmes en Processen (TV_ECDAP)',
+      dates: 'Jan 2025 – Aug 2025',
+      bullets: [
+        'Supported data-driven supervision initiatives within the data, algorithms, and processes centre of expertise.',
+      ],
+    },
+    {
+      title: 'Consultant / Junior Consultant',
+      company: 'Solid Online',
+      team: 'Hoofddorp, Netherlands',
+      dates: 'Feb 2022 – Sep 2024',
+      bullets: [
+        'Progressed from intern to junior consultant to consultant over 2.5 years.',
+        'Built KPI dashboards and carried out data analysis using Excel and Power BI.',
+        'Provided technical support and client-facing consultancy in a hybrid setting.',
+      ],
+    },
+    {
+      title: 'Committee Roles',
+      company: 'Study Association VSAE',
+      team: 'University of Amsterdam',
+      dates: 'Sep 2019 – Dec 2024',
+      bullets: [
+        'Chairwoman, ISP Committee (Dec 2023 – Dec 2024)',
+        'Committee member, Econometric Game 2022 (Apr 2021 – Jun 2022)',
+        'Party Committee member (Sep 2019 – Jun 2020)',
       ],
     },
   ],
   education: [
     {
-      degree: 'B.Sc. Computer Science',
+      degree: "Master's degree — Financial Econometrics",
       school: 'University of Amsterdam',
-      dates: 'Aug 2018 – Aug 2022',
+      dates: 'Sep 2024 – Aug 2025',
     },
     {
-      degree: 'Microsoft Certified: Azure AI Fundamentals',
-      school: '873 / 1000',
-      dates: 'Nov 2025',
+      degree: "Bachelor's degree — Econometrics",
+      school: 'University of Amsterdam',
+      dates: '2019 – 2024',
     },
   ],
 }
@@ -69,8 +86,6 @@ export default function CV() {
           <h1 className={styles.name}>{data.name}</h1>
           <div className={styles.meta}>
             <span>{data.location}</span>
-            <span className={styles.dot}>·</span>
-            <a href={`mailto:${data.email}`} className={styles.metaLink}>{data.email}</a>
             <span className={styles.dot}>·</span>
             <a
               href={`https://${data.linkedin}`}
@@ -107,7 +122,7 @@ export default function CV() {
         <h2 className={styles.heading}>Experience</h2>
         <div className={styles.cards}>
           {data.experience.map((job) => (
-            <div key={job.title} className={styles.card}>
+            <div key={job.title + job.company} className={styles.card}>
               <div className={styles.cardHeader}>
                 <div>
                   <div className={styles.cardTitle}>{job.title}</div>
@@ -127,7 +142,7 @@ export default function CV() {
 
       {/* Education */}
       <section className={styles.section}>
-        <h2 className={styles.heading}>Education & Certifications</h2>
+        <h2 className={styles.heading}>Education</h2>
         <div className={styles.cards}>
           {data.education.map((edu) => (
             <div key={edu.degree} className={styles.card}>

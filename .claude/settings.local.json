@@ -5,7 +5,8 @@
       "WebSearch",
       "WebFetch(domain:www.babolat.com)",
       "WebFetch(domain:www.adidas.com)",
-      "WebFetch(domain:www.keychron.com)"
+      "WebFetch(domain:www.keychron.com)",
+      "WebFetch(domain:nl.linkedin.com)"
     ]
   }
 }
