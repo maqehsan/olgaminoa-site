@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "WebSearch",
+      "WebFetch(domain:www.babolat.com)",
+      "WebFetch(domain:www.adidas.com)",
+      "WebFetch(domain:www.keychron.com)"
+    ]
+  }
+}
