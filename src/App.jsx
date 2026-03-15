@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useNavigate, useLocation, Routes, Route } from 'react-router-dom'
 import { Analytics } from '@vercel/analytics/react'
 import Navbar from './components/Navbar'
 import Home from './modules/home/Home'
@@ -8,23 +8,27 @@ import Wishlist from './modules/wishlist/Wishlist'
 import Recipes from './modules/recipes/Recipes'
 
 const modules = [
-  { id: 'cv', label: 'CV', component: CV },
-  { id: 'interests', label: 'Interests', component: Interests },
-  { id: 'wishlist', label: 'Wishlist', component: Wishlist },
-  { id: 'recipes', label: 'Recipes', component: Recipes },
+  { id: 'cv',        label: 'CV',        path: '/cv',        component: CV },
+  { id: 'interests', label: 'Interests', path: '/interests', component: Interests },
+  { id: 'wishlist',  label: 'Wishlist',  path: '/wishlist',  component: Wishlist },
+  { id: 'recipes',   label: 'Recipes',   path: '/recipes',   component: Recipes },
 ]
 
 export default function App() {
-  const [activeId, setActiveId] = useState('home')
-  const [moduleKey, setModuleKey] = useState(0)
+  const navigate = useNavigate()
+  const location = useLocation()
 
-  function handleNavigate(id) {
-    if (id === activeId) setModuleKey((k) => k + 1)
-    else setActiveId(id)
-  }
+  const activeId =
+    location.pathname === '/'
+      ? 'home'
+      : modules.find((m) => m.path === location.pathname)?.id ?? 'home'
 
   const isHome = activeId === 'home'
-  const ActiveModule = modules.find((m) => m.id === activeId)?.component
+
+  function handleNavigate(id) {
+    const mod = modules.find((m) => m.id === id)
+    navigate(mod ? mod.path : '/')
+  }
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
@@ -32,7 +36,7 @@ export default function App() {
         modules={modules}
         activeId={activeId}
         onNavigate={handleNavigate}
-        onLogoClick={() => handleNavigate('home')}
+        onLogoClick={() => navigate('/')}
       />
       <main
         style={{
@@ -45,10 +49,15 @@ export default function App() {
           flexDirection: 'column',
         }}
       >
-        {isHome
-          ? <Home key={moduleKey} />
-          : ActiveModule && <ActiveModule key={moduleKey} />
-        }
+        <div key={location.pathname} className="page-fade" style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            {modules.map((mod) => {
+              const Component = mod.component
+              return <Route key={mod.id} path={mod.path} element={<Component />} />
+            })}
+          </Routes>
+        </div>
       </main>
       <Analytics />
     </div>
