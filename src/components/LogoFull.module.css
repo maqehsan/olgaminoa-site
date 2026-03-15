@@ -1,23 +1,24 @@
 .logo {
-  height: 44px;
-  width: auto;
-  display: block;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.85rem;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  display: inline-block;
+  line-height: 1;
 }
 
 .name {
-  fill: #7A5C42;
+  color: #7A5C42;
 }
 
 .tld {
-  fill: #C4997A;
+  color: #C4997A;
 }
 
 @media (prefers-color-scheme: dark) {
   .name {
-    fill: #F0E6D4;
-  }
-
-  .tld {
-    fill: #C4997A;
+    color: #F0E6D4;
   }
 }

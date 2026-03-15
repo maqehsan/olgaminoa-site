@@ -14,7 +14,10 @@ function RecipeCard({ recipe, onClick }) {
   return (
     <button className={styles.card} onClick={onClick}>
       <div className={styles.cardImage}>
-        <span className={styles.cardEmoji}>{recipe.emoji}</span>
+        {recipe.image
+          ? <img src={recipe.image} alt={recipe.name} className={styles.cardPhoto} />
+          : <span className={styles.cardEmoji}>{recipe.emoji}</span>
+        }
       </div>
       <div className={styles.cardBody}>
         <div className={styles.cardName}>{recipe.name}</div>
@@ -42,6 +45,12 @@ function RecipeDetail({ recipe, onBack }) {
       <button className={styles.back} onClick={onBack}>
         ← Back
       </button>
+
+      {recipe.image && (
+        <div className={styles.detailHero}>
+          <img src={recipe.image} alt={recipe.name} className={styles.detailHeroImg} />
+        </div>
+      )}
 
       <div className={styles.detailHeader}>
         <span className={styles.detailEmoji}>{recipe.emoji}</span>
