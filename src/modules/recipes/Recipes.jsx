@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 import { recipes } from './data'
 import styles from './Recipes.module.css'
 
@@ -104,9 +105,12 @@ function RecipeDetail({ recipe, onBack }) {
 
 // ── Main ──────────────────────────────────────────────────────
 export default function Recipes() {
+  const navigate = useNavigate()
+  const { id } = useParams()
   const [activeTag, setActiveTag] = useState(null)
-  const [selected, setSelected] = useState(null)
   const allTags = useMemo(() => getAllTags(recipes), [])
+
+  const selected = id ? recipes.find((r) => r.id === id) : null
 
   const filtered = useMemo(
     () => (activeTag ? recipes.filter((r) => r.tags.includes(activeTag)) : recipes),
@@ -114,7 +118,7 @@ export default function Recipes() {
   )
 
   if (selected) {
-    return <RecipeDetail recipe={selected} onBack={() => setSelected(null)} />
+    return <RecipeDetail recipe={selected} onBack={() => navigate(-1)} />
   }
 
   return (
@@ -146,7 +150,7 @@ export default function Recipes() {
       {/* Grid */}
       <div className={styles.grid}>
         {filtered.map((recipe) => (
-          <RecipeCard key={recipe.id} recipe={recipe} onClick={() => setSelected(recipe)} />
+          <RecipeCard key={recipe.id} recipe={recipe} onClick={() => navigate(`/recipes/${recipe.id}`)} />
         ))}
       </div>
     </div>

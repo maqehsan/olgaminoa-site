@@ -56,6 +56,7 @@ export default function App() {
               const Component = mod.component
               return <Route key={mod.id} path={mod.path} element={<Component />} />
             })}
+            <Route path="/recipes/:id" element={<Recipes />} />
           </Routes>
         </div>
       </main>
