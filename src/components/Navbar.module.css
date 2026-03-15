@@ -156,6 +156,14 @@
   color: var(--color-text);
 }
 
+/* Backdrop overlay to close menu on outside tap */
+.backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
 /* Mobile breakpoint */
 @media (max-width: 600px) {
   .links {
@@ -172,6 +180,10 @@
 
   .bar {
     position: relative;
+  }
+
+  .backdrop {
+    display: block;
   }
 
   .brand {

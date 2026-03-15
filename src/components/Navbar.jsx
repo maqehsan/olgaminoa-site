@@ -52,6 +52,9 @@ export default function Navbar({ modules, activeId, onNavigate, onLogoClick }) {
           ))}
         </ul>
       </div>
+      {menuOpen && (
+        <div className={styles.backdrop} onClick={() => setMenuOpen(false)} aria-hidden="true" />
+      )}
     </nav>
   )
 }
