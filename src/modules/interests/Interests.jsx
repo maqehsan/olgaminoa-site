@@ -2,22 +2,34 @@ import styles from './Interests.module.css'
 
 const interests = [
   {
-    icon: '⚽',
-    name: 'Football',
+    icon: '🏋️',
+    name: 'Gym',
     description:
-      'Following the game at every level — tactics, history, and the occasional Sunday league.',
+      'Consistent training, progressive overload, and the quiet satisfaction of showing up.',
+  },
+  {
+    icon: '🧘',
+    name: 'Pilates',
+    description:
+      'All about control and precision. A good counterbalance to the intensity of the gym.',
   },
   {
     icon: '🍳',
     name: 'Cooking',
     description:
-      'Enjoys the process as much as the result. Pasta, fermentation, and anything that takes patience.',
+      'Enjoys the process as much as the result. Trying new recipes and making old ones better.',
   },
   {
-    icon: '🔧',
-    name: 'Building things',
+    icon: '📊',
+    name: 'Puzzling with data',
     description:
-      "Side projects, tools, and tinkering. There's something satisfying about making something from nothing.",
+      'Finding patterns, asking the right questions, and turning raw numbers into something that actually means something.',
+  },
+  {
+    icon: '👗',
+    name: 'Fashion',
+    description:
+      'Personal style as self-expression. An eye for detail, quality over quantity.',
   },
 ]
 
