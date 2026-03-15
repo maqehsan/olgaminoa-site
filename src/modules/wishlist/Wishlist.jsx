@@ -20,6 +20,12 @@ const items = [
     url: 'https://www.keychron.com/products/keychron-k2-pro-qmk-via-wireless-mechanical-keyboard',
     image: 'https://www.keychron.com/cdn/shop/products/Keychron-K2-Pro-QMK-VIA-Wireless-Mechanical-Keyboard-for-Mac-Windows-PBT-keycaps-PCB-screw-in-stabilizer-hot-swappable-red-switch_7f3edd88-59f3-4516-b953-05cdc3d3bece.jpg?v=1671268326',
   },
+  {
+    name: 'OUAI St. Barts Hair & Body Mist',
+    note: 'Tropical-scented mist with notes of dragonfruit, orange blossom, tuberose & musk. 97ml.',
+    url: 'https://www.douglas.nl/nl/p/5011503040?variant=1183692',
+    image: 'https://cdn.shopify.com/s/files/1/0060/4793/products/OUAI_StBarts_HairBodyMist_97mL_Main_1.jpg',
+  },
 ]
 
 function WishlistCard({ item }) {
