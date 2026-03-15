@@ -4,11 +4,13 @@ import Navbar from './components/Navbar'
 import CV from './modules/cv/CV'
 import Interests from './modules/interests/Interests'
 import Wishlist from './modules/wishlist/Wishlist'
+import Recipes from './modules/recipes/Recipes'
 
 const modules = [
   { id: 'cv', label: 'CV', component: CV },
   { id: 'interests', label: 'Interests', component: Interests },
   { id: 'wishlist', label: 'Wishlist', component: Wishlist },
+  { id: 'recipes', label: 'Recipes', component: Recipes },
 ]
 
 export default function App() {

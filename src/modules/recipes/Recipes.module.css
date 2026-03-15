@@ -1,0 +1,296 @@
+/* ── Page ────────────────────────────────────────────────────── */
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.sub {
+  font-size: 15px;
+  color: var(--color-text-muted);
+}
+
+/* ── Filters ─────────────────────────────────────────────────── */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.filterChip {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: 99px;
+  padding: var(--space-1) var(--space-3);
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.filterChip:hover {
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
+}
+
+.filterActive {
+  background: var(--color-text);
+  color: var(--color-bg);
+  border-color: var(--color-text);
+}
+
+.filterActive:hover {
+  color: var(--color-bg);
+}
+
+/* ── Grid ────────────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+/* ── Card ────────────────────────────────────────────────────── */
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  color: inherit;
+  padding: 0;
+  transition: border-color 0.15s;
+}
+
+.card:hover {
+  border-color: var(--color-text-muted);
+}
+
+.cardImage {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardEmoji {
+  font-size: 48px;
+  line-height: 1;
+}
+
+.cardBody {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.cardName {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.metaDot {
+  color: var(--color-border);
+}
+
+.cardTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.tag {
+  background: var(--color-tag-bg);
+  color: var(--color-tag-text);
+  font-size: 11px;
+  padding: 2px var(--space-2);
+  border-radius: 99px;
+  border: 1px solid var(--color-border);
+}
+
+/* ── Detail ──────────────────────────────────────────────────── */
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.back {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  width: fit-content;
+  transition: color 0.15s;
+}
+
+.back:hover {
+  color: var(--color-text);
+}
+
+.detailHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-5);
+}
+
+.detailEmoji {
+  font-size: 52px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.detailName {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+  color: var(--color-text);
+  line-height: 1.2;
+  margin-bottom: var(--space-2);
+}
+
+.detailMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.sectionHeading {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+/* ── Two-column layout ───────────────────────────────────────── */
+.detailBody {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: var(--space-7);
+  align-items: start;
+}
+
+/* ── Ingredients ─────────────────────────────────────────────── */
+.ingredientList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.ingredientItem {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  font-size: 14px;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.ingredientBullet {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-border);
+  flex-shrink: 0;
+  position: relative;
+  top: -1px;
+}
+
+/* ── Steps ───────────────────────────────────────────────────── */
+.stepList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.step {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.stepNumber {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.stepText {
+  font-size: 14px;
+  color: var(--color-text);
+  line-height: 1.7;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detailBody {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .detailHeader {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+}
