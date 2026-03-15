@@ -28,13 +28,6 @@ export default function Home() {
         </nav>
       </div>
 
-      <div className={styles.photoWrap}>
-        <img
-          src="/olga.jpg"
-          alt="Olga Milovanova"
-          className={styles.photo}
-        />
-      </div>
     </div>
   )
 }
