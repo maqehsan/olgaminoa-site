@@ -17,12 +17,7 @@ const interests = [
     icon: '🔧',
     name: 'Building things',
     description:
-      'Side projects, tools, and tinkering. There\'s something satisfying about making something from nothing.',
-  },
-  {
-    icon: null,
-    name: null,
-    description: null,
+      "Side projects, tools, and tinkering. There's something satisfying about making something from nothing.",
   },
 ]
 
@@ -34,19 +29,13 @@ export default function Interests() {
         <p className={styles.sub}>Things I spend time on outside of work.</p>
       </div>
       <div className={styles.grid}>
-        {interests.map((item, i) =>
-          item.name ? (
-            <div key={item.name} className={styles.card}>
-              <span className={styles.icon}>{item.icon}</span>
-              <div className={styles.cardTitle}>{item.name}</div>
-              <p className={styles.cardDesc}>{item.description}</p>
-            </div>
-          ) : (
-            <div key={i} className={`${styles.card} ${styles.placeholder}`}>
-              <span className={styles.placeholderText}>Coming soon</span>
-            </div>
-          )
-        )}
+        {interests.map((item) => (
+          <div key={item.name} className={styles.card}>
+            <span className={styles.icon}>{item.icon}</span>
+            <div className={styles.cardTitle}>{item.name}</div>
+            <p className={styles.cardDesc}>{item.description}</p>
+          </div>
+        ))}
       </div>
     </div>
   )

@@ -56,18 +56,6 @@
   line-height: 1.6;
 }
 
-.placeholder {
-  border-style: dashed;
-  align-items: center;
-  justify-content: center;
-  min-height: 140px;
-}
-
-.placeholderText {
-  font-size: 13px;
-  color: var(--color-text-muted);
-}
-
 @media (max-width: 600px) {
   .grid {
     grid-template-columns: 1fr;

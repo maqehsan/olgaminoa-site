@@ -38,6 +38,7 @@ function WishlistCard({ item }) {
             src={item.image}
             alt={item.name}
             className={styles.image}
+            loading="lazy"
             onError={() => setImgError(true)}
           />
         ) : (

@@ -1,4 +1,4 @@
-import { useNavigate, useLocation, Routes, Route } from 'react-router-dom'
+import { useNavigate, useLocation, Routes, Route, Navigate } from 'react-router-dom'
 import { Analytics } from '@vercel/analytics/react'
 import Navbar from './components/Navbar'
 import Home from './modules/home/Home'
@@ -56,6 +56,7 @@ export default function App() {
               return <Route key={mod.id} path={mod.path} element={<Component />} />
             })}
             <Route path="/recipes/:id" element={<Recipes />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
       </main>
