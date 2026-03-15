@@ -83,7 +83,6 @@ export default function CV() {
       {/* Header */}
       <section className={styles.section}>
         <div>
-          <h1 className={styles.name}>{data.name}</h1>
           <div className={styles.meta}>
             <span>{data.location}</span>
             <span className={styles.dot}>·</span>
