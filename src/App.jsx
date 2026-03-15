@@ -36,7 +36,6 @@ export default function App() {
         modules={modules}
         activeId={activeId}
         onNavigate={handleNavigate}
-        onLogoClick={() => navigate('/')}
       />
       <main
         style={{

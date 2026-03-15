@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styles from './Home.module.css'
 
 const sections = [
@@ -9,8 +9,6 @@ const sections = [
 ]
 
 export default function Home() {
-  const navigate = useNavigate()
-
   return (
     <div className={styles.hero}>
       <div className={styles.content}>
@@ -20,9 +18,9 @@ export default function Home() {
           {sections.map((s, i) => (
             <span key={s.label} className={styles.linkItem}>
               {i > 0 && <span className={styles.sep}>·</span>}
-              <button className={styles.link} onClick={() => navigate(s.path)}>
+              <Link className={styles.link} to={s.path}>
                 {s.label}
-              </button>
+              </Link>
             </span>
           ))}
         </nav>

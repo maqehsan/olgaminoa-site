@@ -118,7 +118,7 @@ export default function Recipes() {
   )
 
   if (selected) {
-    return <RecipeDetail recipe={selected} onBack={() => navigate(-1)} />
+    return <RecipeDetail recipe={selected} onBack={() => navigate('/recipes')} />
   }
 
   return (

@@ -1,8 +1,9 @@
 import { useState } from 'react'
+import { NavLink, Link } from 'react-router-dom'
 import styles from './Navbar.module.css'
 import LogoFull from './LogoFull'
 
-export default function Navbar({ modules, activeId, onNavigate, onLogoClick }) {
+export default function Navbar({ modules, activeId, onNavigate }) {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const handleNavigate = (id) => {
@@ -17,18 +18,18 @@ export default function Navbar({ modules, activeId, onNavigate, onLogoClick }) {
       )}
       <nav className={styles.navbar}>
         <div className={styles.bar}>
-          <button className={styles.brand} onClick={onLogoClick} aria-label="Home">
+          <Link className={styles.brand} to="/" aria-label="Home">
             <LogoFull />
-          </button>
+          </Link>
           <ul className={styles.links}>
             {modules.map((mod) => (
               <li key={mod.id}>
-                <button
-                  className={`${styles.link} ${activeId === mod.id ? styles.active : ''}`}
-                  onClick={() => handleNavigate(mod.id)}
+                <NavLink
+                  className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`}
+                  to={mod.path}
                 >
                   {mod.label}
-                </button>
+                </NavLink>
               </li>
             ))}
           </ul>

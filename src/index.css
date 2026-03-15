@@ -78,6 +78,12 @@ a {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .page-fade {
+    animation: none;
+  }
+}
+
 ul {
   list-style: none;
 }
