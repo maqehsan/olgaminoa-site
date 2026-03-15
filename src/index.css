@@ -1,12 +1,12 @@
 /* ── CSS Variables ────────────────────────────────────────── */
 :root {
-  --color-bg: #ffffff;
-  --color-surface: #f7f7f7;
-  --color-border: #e5e5e5;
-  --color-text: #111111;
-  --color-text-muted: #6b7280;
-  --color-tag-bg: #efefef;
-  --color-tag-text: #333333;
+  --color-bg: #FAF7F2;
+  --color-surface: #F2EBE0;
+  --color-border: #E2D5C4;
+  --color-text: #2A1F16;
+  --color-text-muted: #8C7060;
+  --color-tag-bg: #EDE5DA;
+  --color-tag-text: #5C4330;
 
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
     sans-serif;
@@ -22,18 +22,17 @@
 
   --radius: 6px;
   --max-width: 720px;
-  --navbar-height: 52px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #0f0f0f;
-    --color-surface: #1a1a1a;
-    --color-border: #2a2a2a;
-    --color-text: #ededed;
-    --color-text-muted: #8b949e;
-    --color-tag-bg: #252525;
-    --color-tag-text: #c9d1d9;
+    --color-bg: #1C1410;
+    --color-surface: #2A1F16;
+    --color-border: #3D2E22;
+    --color-text: #F0E6D4;
+    --color-text-muted: #C4997A;
+    --color-tag-bg: #3D2E22;
+    --color-tag-text: #E8D5BC;
   }
 }
 
