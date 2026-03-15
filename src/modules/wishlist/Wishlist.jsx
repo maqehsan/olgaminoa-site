@@ -24,7 +24,7 @@ const items = [
     name: 'OUAI St. Barts Hair & Body Mist',
     note: 'Tropical-scented mist with notes of dragonfruit, orange blossom, tuberose & musk. 97ml.',
     url: 'https://www.douglas.nl/nl/p/5011503040?variant=1183692',
-    image: 'https://cdn.shopify.com/s/files/1/0060/4793/products/OUAI_StBarts_HairBodyMist_97mL_Main_1.jpg',
+    image: 'https://media.douglas.nl/medias/OVLL4g1183692-0-global.jpg?context=bWFzdGVyfGltYWdlc3w4NjkxNXxpbWFnZS9qcGVnfGFHRmpMMmd3T0M4Mk9ETXdPRGMxT0RjMU56UXdOaTlQVmt4TU5HY3hNVGd6TmpreVh6QmZaMnh2WW1Gc0xtcHdad3wyNjA0ZjI1NTFjODZjODYzY2Y2MTdjYjNjYzMwNWE5Y2YzNzhmZmNmODQ0MWVjODYzOTc5ZGQ2MTcwZWU1YzY1&grid=true&imPolicy=grayScaled&imdensity=1&imwidth=603',
   },
 ]
 
