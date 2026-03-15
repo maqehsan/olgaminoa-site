@@ -65,11 +65,12 @@
   border: none;
   cursor: pointer;
   padding: var(--space-2);
-  margin-left: auto;
   width: 36px;
   height: 36px;
   border-radius: var(--radius);
   transition: background 0.15s;
+  grid-column: 3;
+  justify-self: end;
 }
 
 .hamburger:hover {
