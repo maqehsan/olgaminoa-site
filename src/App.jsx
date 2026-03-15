@@ -15,11 +15,17 @@ const modules = [
 
 export default function App() {
   const [activeId, setActiveId] = useState(modules[0].id)
+  const [moduleKey, setModuleKey] = useState(0)
   const ActiveModule = modules.find((m) => m.id === activeId)?.component
+
+  function handleNavigate(id) {
+    if (id === activeId) setModuleKey((k) => k + 1)
+    else setActiveId(id)
+  }
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <Navbar modules={modules} activeId={activeId} onNavigate={setActiveId} />
+      <Navbar modules={modules} activeId={activeId} onNavigate={handleNavigate} />
       <main
         style={{
           maxWidth: 'var(--max-width)',
@@ -29,7 +35,7 @@ export default function App() {
           flex: 1,
         }}
       >
-        {ActiveModule && <ActiveModule />}
+        {ActiveModule && <ActiveModule key={moduleKey} />}
       </main>
       <Analytics />
     </div>
