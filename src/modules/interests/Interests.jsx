@@ -31,6 +31,12 @@ const interests = [
     description:
       'Personal style as self-expression. An eye for detail, quality over quantity.',
   },
+  {
+    icon: '🚴',
+    name: 'Rocycle',
+    description:
+      'High-energy indoor cycling that combines rhythm, resistance, and community into one sweaty, satisfying ride.',
+  },
 ]
 
 export default function Interests() {
