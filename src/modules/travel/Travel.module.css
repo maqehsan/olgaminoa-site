@@ -1,0 +1,133 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  animation: fadeUp 0.9s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Intro ─────────────────────────────────────────────── */
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: 1.15;
+}
+
+.sub {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+/* ── Map ───────────────────────────────────────────────── */
+.mapWrap {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--color-travel-ocean);
+  border: 1px solid var(--color-border);
+}
+
+.map {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Tooltip ───────────────────────────────────────────── */
+.tooltip {
+  position: fixed;
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-size: 0.78rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 100;
+  letter-spacing: 0.02em;
+}
+
+/* ── Hint ──────────────────────────────────────────────── */
+.hint {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin-top: calc(-1 * var(--space-4));
+  letter-spacing: 0.02em;
+}
+
+/* ── Country card grid ─────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+  width: 100%;
+}
+
+.card:hover {
+  border-color: var(--color-travel-visited);
+  transform: translateY(-2px);
+}
+
+.cardEmoji {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.cardName {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--color-text);
+}
+
+.cardYear {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+}
+
+.cardSummary {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .title { font-size: 2rem; }
+  .grid { grid-template-columns: 1fr 1fr; }
+}

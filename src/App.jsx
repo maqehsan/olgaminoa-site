@@ -6,12 +6,15 @@ import CV from './modules/cv/CV'
 import Interests from './modules/interests/Interests'
 import Wishlist from './modules/wishlist/Wishlist'
 import Recipes from './modules/recipes/Recipes'
+import Travel from './modules/travel/Travel'
+import TravelDetail from './modules/travel/TravelDetail'
 
 const modules = [
   { id: 'cv',        label: 'CV',        path: '/cv',        component: CV },
   { id: 'interests', label: 'Interests', path: '/interests', component: Interests },
   { id: 'wishlist',  label: 'Wishlist',  path: '/wishlist',  component: Wishlist },
   { id: 'recipes',   label: 'Recipes',   path: '/recipes',   component: Recipes },
+  { id: 'travel',    label: 'Travel',    path: '/travel',    component: Travel },
 ]
 
 export default function App() {
@@ -21,7 +24,7 @@ export default function App() {
   const activeId =
     location.pathname === '/'
       ? 'home'
-      : modules.find((m) => m.path === location.pathname)?.id ?? 'home'
+      : modules.find((m) => location.pathname.startsWith(m.path))?.id ?? 'home'
 
   const isHome = activeId === 'home'
 
@@ -56,6 +59,7 @@ export default function App() {
               return <Route key={mod.id} path={mod.path} element={<Component />} />
             })}
             <Route path="/recipes/:id" element={<Recipes />} />
+            <Route path="/travel/:slug" element={<TravelDetail />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
