@@ -22,6 +22,13 @@
 
   --radius: 6px;
   --max-width: 720px;
+
+  /* Travel map colours */
+  --color-travel-land: #DDD3C5;
+  --color-travel-border: #FAF7F2;
+  --color-travel-visited: #A0785A;
+  --color-travel-hover: #7A5440;
+  --color-travel-ocean: #EDE5DA;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,6 +40,13 @@
     --color-text-muted: #C4997A;
     --color-tag-bg: #3D2E22;
     --color-tag-text: #E8D5BC;
+
+    /* Travel map colours – dark */
+    --color-travel-land: #3D3028;
+    --color-travel-border: #1C1410;
+    --color-travel-visited: #B8896A;
+    --color-travel-hover: #D4A882;
+    --color-travel-ocean: #2A1F16;
   }
 }
 
