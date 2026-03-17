@@ -4,6 +4,8 @@ import {
   ComposableMap,
   Geographies,
   Geography,
+  Graticule,
+  Sphere,
   ZoomableGroup,
 } from 'react-simple-maps'
 import { visitedCodes, visitedCountries } from './data'
@@ -54,11 +56,13 @@ export default function Travel() {
 
       <div className={styles.mapWrap}>
         <ComposableMap
-          projection="geoMercator"
-          projectionConfig={{ scale: 120, center: [10, 20] }}
+          projection="geoNaturalEarth1"
+          projectionConfig={{ scale: 153, center: [10, 10] }}
           className={styles.map}
         >
           <ZoomableGroup zoom={1} minZoom={1} maxZoom={6}>
+            <Sphere fill="var(--color-travel-ocean)" stroke="var(--color-travel-sphere-stroke)" strokeWidth={0.5} />
+            <Graticule stroke="var(--color-travel-graticule)" strokeWidth={0.3} />
             <Geographies geography={GEO_URL}>
               {({ geographies }) =>
                 geographies.map((geo) => {
