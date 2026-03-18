@@ -1,0 +1,59 @@
+.globeContainer {
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, #1A2535 0%, #0f1720 100%);
+  border: 1px solid var(--color-border);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.12),
+    0 1px 4px rgba(0, 0, 0, 0.08),
+    inset 0 0 60px rgba(26, 37, 53, 0.3);
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.globeContainer.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Override globe canvas cursor */
+.globeContainer canvas {
+  cursor: grab;
+}
+
+.globeContainer canvas:active {
+  cursor: grabbing;
+}
+
+.globeTooltip {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(42, 31, 22, 0.9);
+  color: #F0E6D4;
+  font-size: 0.85rem;
+  padding: 6px 16px;
+  border-radius: 20px;
+  pointer-events: none;
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(181, 113, 74, 0.3);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  animation: tooltipFade 0.2s ease;
+}
+
+@keyframes tooltipFade {
+  from { opacity: 0; transform: translateX(-50%) translateY(4px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .globeContainer {
+    border-radius: 8px;
+  }
+}
