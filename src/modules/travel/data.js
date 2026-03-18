@@ -4,6 +4,8 @@ export const visitedCountries = {
     name: 'Indonesia',
     slug: 'indonesia',
     year: 2022,
+    lat: -8.65,
+    lng: 115.22,
     summary: 'Temples, rice terraces, and the best coffee I have ever had.',
     coverEmoji: '🌴',
     blog: [
@@ -25,6 +27,8 @@ export const visitedCountries = {
     name: 'Italy',
     slug: 'italy',
     year: 2021,
+    lat: 41.90,
+    lng: 12.50,
     summary: 'Food, history, and walking until your feet give up.',
     coverEmoji: '🍕',
     blog: [
@@ -46,6 +50,8 @@ export const visitedCountries = {
     name: 'Spain',
     slug: 'spain',
     year: 2023,
+    lat: 41.39,
+    lng: 2.17,
     summary: 'Late nights, good wine, and architecture that makes no sense in the best possible way.',
     coverEmoji: '🥘',
     blog: [
@@ -67,6 +73,8 @@ export const visitedCountries = {
     name: 'Portugal',
     slug: 'portugal',
     year: 2022,
+    lat: 38.72,
+    lng: -9.14,
     summary: 'Melancholy music, incredible tiles, and the Atlantic at the edge of everything.',
     coverEmoji: '🐓',
     blog: [
@@ -88,6 +96,8 @@ export const visitedCountries = {
     name: 'Russia',
     slug: 'russia',
     year: 2019,
+    lat: 55.75,
+    lng: 37.62,
     summary: 'Grand architecture, winter cold, and the strange beauty of Red Square at night.',
     coverEmoji: '🏰',
     blog: [
@@ -109,6 +119,8 @@ export const visitedCountries = {
     name: 'Austria',
     slug: 'austria',
     year: 2020,
+    lat: 48.21,
+    lng: 16.37,
     summary: 'Coffee houses, classical music, and Sachertorte eaten slowly.',
     coverEmoji: '🎻',
     blog: [
@@ -130,6 +142,8 @@ export const visitedCountries = {
     name: 'France',
     slug: 'france',
     year: 2023,
+    lat: 48.86,
+    lng: 2.35,
     summary: 'Markets, wine, and finally understanding why people care so much about bread.',
     coverEmoji: '🥐',
     blog: [
