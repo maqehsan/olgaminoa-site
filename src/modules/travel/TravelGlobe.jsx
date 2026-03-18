@@ -1,6 +1,5 @@
-import { useEffect, useRef, useState, useCallback, useMemo } from 'react'
+import { useEffect, useRef, useState, useCallback } from 'react'
 import Globe from 'react-globe.gl'
-import * as THREE from 'three'
 import { visitedCountries } from './data'
 import styles from './TravelGlobe.module.css'
 
@@ -88,16 +87,6 @@ export default function TravelGlobe({ onCountryClick }) {
     [onCountryClick]
   )
 
-  // Globe material - warm earthy tones
-  const globeMaterial = useMemo(() => {
-    const material = new THREE.MeshPhongMaterial()
-    material.color = new THREE.Color('#D6CABC')
-    material.emissive = new THREE.Color('#1a1008')
-    material.emissiveIntensity = 0.1
-    material.shininess = 5
-    return material
-  }, [])
-
   const globeHeight = Math.min(globeWidth * 0.85, 520)
 
   return (
@@ -111,44 +100,45 @@ export default function TravelGlobe({ onCountryClick }) {
           width={globeWidth}
           height={globeHeight}
           backgroundColor="rgba(0,0,0,0)"
+          globeImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
           atmosphereColor="#B5714A"
           atmosphereAltitude={0.18}
-          globeMaterial={globeMaterial}
-          // Points (pulsing markers)
+          // Points (clickable markers)
           pointsData={pointsData}
           pointLat="lat"
           pointLng="lng"
-          pointColor={() => '#B5714A'}
-          pointAltitude={0.01}
-          pointRadius={0.5}
+          pointColor={() => '#E8824A'}
+          pointAltitude={0.06}
+          pointRadius={0.6}
           pointsMerge={false}
           onPointClick={handlePointClick}
           onPointHover={setHoveredPoint}
-          // Rings (pulsing effect)
+          // Rings (pulsing effect around markers)
           ringsData={pointsData}
           ringLat="lat"
           ringLng="lng"
-          ringColor={() => (t) => `rgba(181, 113, 74, ${1 - t})`}
-          ringMaxRadius={3}
+          ringColor={() => (t) => `rgba(232, 130, 74, ${1 - t})`}
+          ringMaxRadius={4}
           ringPropagationSpeed={1.5}
           ringRepeatPeriod={2000}
           // Arcs (flight paths)
           arcsData={arcsData}
-          arcColor={() => ['#CC8A5Aaa', '#B5714Aaa']}
+          arcColor={() => ['#E8824Acc', '#B5714Acc']}
           arcDashLength={0.4}
           arcDashGap={0.2}
           arcDashAnimateTime={2500}
-          arcStroke={0.5}
+          arcStroke={0.7}
           arcAltitudeAutoScale={0.35}
           // Labels
           labelsData={pointsData}
           labelLat="lat"
           labelLng="lng"
           labelText="name"
-          labelSize={1.2}
-          labelDotRadius={0}
+          labelSize={1.4}
+          labelDotRadius={0.4}
+          labelDotOrientation={() => 'bottom'}
           labelColor={() => '#F0E6D4'}
-          labelAltitude={0.015}
+          labelAltitude={0.02}
           labelResolution={2}
         />
       )}
