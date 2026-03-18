@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
 import Globe from 'react-globe.gl'
 import { visitedCountries } from './data'
+import earthDayUrl from './assets/earth-day.jpg'
 import styles from './TravelGlobe.module.css'
 
 // Countries sorted chronologically for arc paths
@@ -100,7 +101,7 @@ export default function TravelGlobe({ onCountryClick }) {
           width={globeWidth}
           height={globeHeight}
           backgroundColor="rgba(0,0,0,0)"
-          globeImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+          globeImageUrl={earthDayUrl}
           atmosphereColor="#B5714A"
           atmosphereAltitude={0.18}
           // Points (clickable markers)
